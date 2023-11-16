@@ -22,6 +22,8 @@ Route::get('/', [SiteController::class, 'home'])->name('home');
 Route::get('/e', [EmpresaController::class, 'list'])->name('empresa.list');
 Route::get('/e/create', [EmpresaController::class, 'create'])->name('empresa.create');
 Route::post('/e/store', [EmpresaController::class, 'store'])->name('empresa.store');
+Route::get('/e/{id}/edit', [EmpresaController::class, 'edit'])->name('empresa.edit');
+Route::put('/e/{id}', [EmpresaController::class, 'update'])->name('empresa.update');
 
 Route::get('/f', [FuncionarioController::class, 'list'])->name('funcionario.list');
 

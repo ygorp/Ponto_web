@@ -29,4 +29,39 @@ class EmpresaController extends Controller
 
         return redirect('/e');
     }
+
+    public function edit(int $id)
+    {
+        $empresa = Empresas::find($id);
+
+        return view('empresa.edit_cad_empresa', [
+            'empresas' => $empresa
+        ]);
+    }
+
+    public function update(int $id, Request $request)
+    {
+        $empresa = Empresas::find($id);
+
+        $empresa->update([
+            'razaoSocial' => $request->razaoSocial,
+            'nomeFantasia' => $request->nomeFantasia, 
+            'cnpjCpf' => $request->cnpjCpf, 
+            'inscricao' => $request->inscricao, 
+            'enderecoEmpresa' => $request->enderecoEmpresa, 
+            'bairroEmpresa' => $request->bairroEmpresa, 
+            'cidadeEmpresa' => $request->cidadeEmpresa, 
+            'cepEmpresa' => $request->cepEmpresa, 
+            'estadoEmpresa' => $request->estadoEmpresa, 
+            'paisEmpresa' => $request->paisEmpresa, 
+            'telefoneEmpresa' => $request->telefoneEmpresa, 
+            'ceiEmpresa' => $request->ceiEmpresa, 
+            'folhaEmpresa' => $request->folhaEmpresa, 
+            'responsavelEmpresa' => $request->responsavelEmpresa, 
+            'cargoEmpresa' => $request->cargoEmpresa, 
+            'emailEmpresa' => $request->emailEmpresa
+        ]);
+
+        return redirect('/e');
+    }
 }

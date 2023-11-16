@@ -19,6 +19,7 @@
                         <th scope="col">Código</th>
                         <th scope="col">Razão Social</th>
                         <th scope="col">CNPJ/CPF</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody id="tabelaCorpo">
@@ -27,6 +28,9 @@
                         <th scope="row">{{ $empresa->id }}</th>
                         <td>{{ $empresa->razaoSocial }}</td>
                         <td>{{ $empresa->cnpjCpf }}</td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('empresa.edit', $empresa) }}">Editar</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
