@@ -24,6 +24,7 @@ Route::get('/e/create', [EmpresaController::class, 'create'])->name('empresa.cre
 Route::post('/e/store', [EmpresaController::class, 'store'])->name('empresa.store');
 Route::get('/e/{id}/edit', [EmpresaController::class, 'edit'])->name('empresa.edit');
 Route::put('/e/{id}', [EmpresaController::class, 'update'])->name('empresa.update');
+Route::delete('/e/{id}', [EmpresaController::class, 'delete'])->name('empresa.delete');
 
 Route::get('/f', [FuncionarioController::class, 'list'])->name('funcionario.list');
 

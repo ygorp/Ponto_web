@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('titulo', 'Editar - Empresa')
+@section('titulo', 'Editar | Empresa')
 
 @section('conteudo')
     <main>

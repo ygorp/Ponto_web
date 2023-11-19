@@ -64,4 +64,13 @@ class EmpresaController extends Controller
 
         return redirect('/e');
     }
+
+    public function delete(int $id)
+    {
+        $empresa = Empresas::find($id);
+
+        $empresa->delete();
+
+        return redirect('/e');
+    }
 }
