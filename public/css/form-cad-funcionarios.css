@@ -35,7 +35,7 @@ main {
     align-items: center;
     text-transform: uppercase;
     margin-bottom: .5rem;
-    padding: .5rem;
+    padding: .8rem;
     border: 1px solid #333;
     border-radius: 10px;
     background-color: #f4f4f4;
@@ -54,6 +54,7 @@ h3 {
     background-color: #f4f4f4;
     border: 1px solid #333;
     border-radius: 10px;
+    padding: 2rem;
 }
 
 form {
@@ -66,16 +67,12 @@ form {
     margin-bottom: 1rem;
 }
 
-#arquivoLogo {
-    margin-bottom: 4rem;
-}
-
-.btn-cad-empresa {
+.btn-cad-funcionarios {
     display: flex;
     gap: 2rem;
 }
 
-.btn-cad-empresa button {
+.btn-cad-funcionarios button {
     width: 120px;
     font-size: 18px;
     font-weight: 600;
@@ -85,4 +82,8 @@ form {
     padding: 10px 15px;
     border-radius: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    margin-top: 2rem;
 }
