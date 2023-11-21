@@ -27,5 +27,10 @@ Route::put('/e/{id}', [EmpresaController::class, 'update'])->name('empresa.updat
 Route::delete('/e/{id}', [EmpresaController::class, 'delete'])->name('empresa.delete');
 
 Route::get('/f', [FuncionarioController::class, 'list'])->name('funcionario.list');
+Route::get('/f/create', [FuncionarioController::class, 'create'])->name('funcionario.create');
+Route::post('/f/store', [FuncionarioController::class, 'store'])->name('funcionario.store');
+Route::get('/f/{id}/edit', [FuncionarioController::class, 'edit'])->name('funcionario.edit');
+Route::put('/f/{id}', [FuncionarioController::class, 'update'])->name('funcionario.update');
+Route::delete('/f/{id}', [FuncionarioController::class, 'delete'])->name('funcionario.delete');
 
 Route::get('/h', [HorarioController::class, 'list'])->name('horario.list');

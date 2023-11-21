@@ -8,7 +8,7 @@
             <div class="top_cad">
                 <h3>Funcionários</h3>
                 <div class="btn_cad">
-                    <button id="btn-add-empresa">+ Adicionar</button>
+                    <a href="{{ route('funcionario.create') }}" id="btn-add-empresa" style="text-decoration: none;">+ Adicionar</a>
                     <input type="search" name="pesquisa" id="pesquisa_empresa" placeholder="Digite o nome do funcionário">
                     <button type="submit" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
