@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/inicio.css">
     <link rel="stylesheet" href="/css/cadastros.css">
     <link rel="stylesheet" href="/css/form-cad-empresa.css">
-    <link rel="stylesheet" href="/css/form-cad-funcionarios.css">
 </head>
 <body>
     <header>

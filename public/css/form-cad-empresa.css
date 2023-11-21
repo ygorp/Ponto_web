@@ -43,7 +43,7 @@ main {
 
 h2 {
     font-size: 25px;
-    padding: 1rem 1.5rem;
+    padding: .5rem 1.5rem;
 }
 
 h3 {
@@ -62,6 +62,13 @@ form {
     width: 60%;
 }
 
+.form-cad input[type=text],
+.form-cad select,
+.form-cad input[type=date] {
+    border: 1px solid #333;
+    border-radius: 10px;
+}
+
 .row div {
     margin-left: 1rem;
     margin-top: 1rem;
@@ -70,20 +77,35 @@ form {
 
 #arquivoLogo {
     margin-bottom: 4rem;
+    background-color: #cbd5e1;
+    padding: .8rem;
+    border-radius: 10px;
 }
 
-.btn-cad-empresa {
+.btn-form-cad {
     display: flex;
     gap: 2rem;
 }
 
-.btn-cad-empresa button {
+.btn-form-cad button {
     width: 120px;
     font-size: 18px;
     font-weight: 600;
     border: none;
     background-color: #1e3a8a;
     color: #FFFFFF;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-form-cad a {
+    width: 120px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e3a8a;
+    border: none;
+    background-color: #cbd5e1;
     padding: 10px 15px;
     border-radius: 30px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
