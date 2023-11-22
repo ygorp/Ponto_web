@@ -30,7 +30,7 @@
                         <td>{{ $empresa->cnpjCpf }}</td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('empresa.edit', $empresa) }}">Editar</a>
-                            <form action="{{ route('empresa.delete', $empresa) }}" method="POST" style="display: inline;">
+                            <form action="{{ route('empresa.destroy', $empresa) }}" method="POST" style="display: inline;">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>

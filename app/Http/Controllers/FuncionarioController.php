@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Funcionarios;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller
 {
-    public function list()
+    /**
+     * Exibe lista dos funcionários cadastrados
+     *
+     * @return View
+     */
+    public function index(): View
     {
         $funcionarios = ( Funcionarios::get() );
 
@@ -16,21 +23,46 @@ class FuncionarioController extends Controller
         ]);
     }
 
-    public function create()
+    /**
+     * Exibe formulário de criação de funcionário
+     *
+     * @return View
+     */
+    public function create(): View
     {
         return view( 'funcionario.form_cad_funcionarios' );
     }
 
-    public function store(Request $request)
+    /**
+     * Adiciona novo funcionário no banco de dados
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function store(Request $request): RedirectResponse
     {
         $dados = $request->except('_token');
 
         Funcionarios::create($dados);
 
-        return redirect('/f');
+        return redirect('/funcionario');
     }
 
-    public function edit(int $id)
+    /**
+     * Exibe dados de determinado funcionário
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Exibe formulário de edição do funcionário
+     *
+     * @param integer $id
+     * @return View
+     */
+    public function edit(int $id): View
     {
         $funcionario = Funcionarios::find($id);
 
@@ -39,7 +71,14 @@ class FuncionarioController extends Controller
         ]);
     }
 
-    public function update(int $id, Request $request)
+    /**
+     * Atualiza o funcionário no banco de dados, após edição
+     *
+     * @param integer $id
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function update(int $id, Request $request): RedirectResponse
     {
         $funcionarios = Funcionarios::find($id);
 
@@ -51,15 +90,21 @@ class FuncionarioController extends Controller
             'admissao' => $request->admissao
         ]);
 
-        return redirect('/f');
+        return redirect('/funcionario');
     }
 
-    public function delete(int $id)
+    /**
+     * Remove o funcionário no banco de dados
+     *
+     * @param integer $id
+     * @return RedirectResponse
+     */
+    public function destroy(int $id): RedirectResponse
     {
         $funcionarios = Funcionarios::find($id);
 
         $funcionarios->delete();
 
-        return redirect('/f');
+        return redirect('/funcionario');
     }
 }

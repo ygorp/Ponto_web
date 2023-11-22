@@ -34,7 +34,7 @@
                         <td></td>
                         <td>
                             <a class="btn btn-primary" href="{{ route('funcionario.edit', $funcionario) }}">Editar</a>
-                            <form action="{{ route('funcionario.delete', $funcionario) }}" method="POST" style="display: inline;">
+                            <form action="{{ route('funcionario.destroy', $funcionario) }}" method="POST" style="display: inline;">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>

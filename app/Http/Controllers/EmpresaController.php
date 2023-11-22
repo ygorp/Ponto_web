@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empresas;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
 {
-    public function list()
+    /**
+     * Mostra a lista de empresas cadastradas
+     *
+     * @return View
+     */
+    public function index(): View
     {
         $empresas = ( Empresas::get() );
 
@@ -16,21 +23,46 @@ class EmpresaController extends Controller
         ]);
     }
 
-    public function create()
+    /**
+     * Exibe o form de nova empresa
+     *
+     * @return View
+     */
+    public function create(): View
     {
         return view( 'empresa.form_cad_empresa' );
     }
 
-    public function store(Request $request)
+    /**
+     * Adiciona a nova empresa no banco de dados
+     *
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function store(Request $request): RedirectResponse
     {
         $dados = $request->except('_token');
 
         Empresas::create($dados);
 
-        return redirect('/e');
+        return redirect('/empresa');
     }
 
-    public function edit(int $id)
+    /**
+     * Exibe dados de determinada empresa
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Exibe formulário de edição da empresa
+     *
+     * @param integer $id
+     * @return View
+     */
+    public function edit(string $id): View
     {
         $empresa = Empresas::find($id);
 
@@ -39,7 +71,14 @@ class EmpresaController extends Controller
         ]);
     }
 
-    public function update(int $id, Request $request)
+    /**
+     * Atualiza a empresa no banco de dados, após edição
+     *
+     * @param integer $id
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    public function update(Request $request, string $id): RedirectResponse
     {
         $empresa = Empresas::find($id);
 
@@ -62,15 +101,21 @@ class EmpresaController extends Controller
             'emailEmpresa' => $request->emailEmpresa
         ]);
 
-        return redirect('/e');
+        return redirect('/empresa');
     }
 
-    public function delete(int $id)
+    /**
+     * Remove a empresa do banco de dados
+     *
+     * @param integer $id
+     * @return RedirectResponse
+     */
+    public function destroy(string $id): RedirectResponse
     {
         $empresa = Empresas::find($id);
 
         $empresa->delete();
 
-        return redirect('/e');
+        return redirect('/empresa');
     }
 }

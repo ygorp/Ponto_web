@@ -29,9 +29,9 @@
                     Cadastros
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('empresa.list') }}">Empresa</a></li>
-                        <li><a class="dropdown-item" href="{{ route('funcionario.list') }}">Funcionários</a></li>
-                        <li><a class="dropdown-item" href="{{ route('horario.list') }}">Horários</a></li>
+                        <li><a class="dropdown-item" href="{{ route('empresa.index') }}">Empresa</a></li>
+                        <li><a class="dropdown-item" href="{{ route('funcionario.index') }}">Funcionários</a></li>
+                        <li><a class="dropdown-item" href="{{ route('horario.index') }}">Horários</a></li>
                         <li><a class="dropdown-item" href="#">Banco de Horas</a></li>
                         <li><a class="dropdown-item" href="#">Departamentos</a></li>
                         <li><a class="dropdown-item" href="#">Funções</a></li>
