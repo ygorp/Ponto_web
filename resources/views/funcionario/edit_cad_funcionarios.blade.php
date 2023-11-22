@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('titulo', 'Ponto web | Cadastro funcionario')
+@section('titulo', 'Editar | Funcionario')
 
 @section('conteudo')
     <main>
@@ -30,8 +30,8 @@
                 </div>
                 
                 <div class="col-md-3">
-                    <label for="admissão" class="form-label">Data de Admissão</label>
-                    <input type="date" value="{{ $funcionarios->admissao }}" name="admissão" id="admissão" class="form-control">
+                    <label for="admissao" class="form-label">Data de Admissão</label>
+                    <input type="date" value="{{ $funcionarios->admissao }}" name="admissao" id="admissao" class="form-control">
                 </div>
                 <div class="col-4">
                     <label for="horário" class="form-label">Horário</label>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="btn-cad-funcionarios">
                     <button type="submit" class="btn btn-primary">Salvar</button>
-                    <button type="reset" class="btn btn-primary">Cancelar</button>
+                    <a type="reset" href="{{ route('funcionario.list') }}" class="btn btn-primary" style="text-decoration: none;">Cancelar</a>
                 </div>
             </form>
         </div>

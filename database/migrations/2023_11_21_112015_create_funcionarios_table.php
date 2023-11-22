@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 50)->notNull();
             $table->integer('matricula')->notNull();
-            $table->string('Cpf', 50)->notNull();
+            $table->string('cpf', 50)->notNull();
             $table->string('pis', 50)->notNull();
-            $table->string('admissão', 50)->notNull();
+            $table->string('admissao', 50)->notNull();
             $table->timestamps();
         });
     }

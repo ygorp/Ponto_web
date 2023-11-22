@@ -21,10 +21,27 @@
                         <th scope="col">CPF</th>
                         <th scope="col">Código Identificador</th>
                         <th scope="col">Departamento</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody id="tabelaCorpo">
-                    <!-- Preencha a tabela com os dados necessários -->
+                    @foreach ($funcionarios as $funcionario)
+                    <tr class="text-center">
+                        <th scope="row">{{ $funcionario->id }}</th>
+                        <td>{{ $funcionario->nome }}</td>
+                        <td>{{ $funcionario->cpf }}</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a class="btn btn-primary" href="{{ route('funcionario.edit', $funcionario) }}">Editar</a>
+                            <form action="{{ route('funcionario.delete', $funcionario) }}" method="POST" style="display: inline;">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

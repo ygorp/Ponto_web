@@ -32,10 +32,10 @@ class FuncionarioController extends Controller
 
     public function edit(int $id)
     {
-        $funcionarios = Funcionarios::find($id);
+        $funcionario = Funcionarios::find($id);
 
         return view('funcionario.edit_cad_funcionarios', [
-            'empresas' => $funcionarios
+            'funcionarios' => $funcionario
         ]);
     }
 
@@ -51,7 +51,7 @@ class FuncionarioController extends Controller
             'admissao' => $request->admissao
         ]);
 
-        return redirect('/e');
+        return redirect('/f');
     }
 
     public function delete(int $id)

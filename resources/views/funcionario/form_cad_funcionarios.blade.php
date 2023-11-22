@@ -7,9 +7,9 @@
         <div class="titulo-empresa">
             <h2>Funcionário</h2>
         </div>
-        <div class="form-cad" action="{{ route('funcionario.store') }}" method="POST">
-            @csrf
-            <form class="row g-3 container">
+        <div class="form-cad">
+            <form class="row g-3 container" action="{{ route('funcionario.store') }}" method="POST">
+                @csrf
                 <h3>Dados de Identificação</h3>
                 <div class="col-6">
                     <label for="nome" class="form-label">Nome</label>
@@ -20,8 +20,8 @@
                     <input type="text" name="matricula" id="matricula" class="form-control">
                 </div>
                 <div class="col-3">
-                    <label for="Cpf" class="form-label">CPF</label>
-                    <input type="text" name="Cpf" id="Cpf" class="form-control">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" name="cpf" id="cpf" class="form-control">
                 </div>
                 <div class="col-3">
                     <label for="pis" class="form-label">PIS</label>
@@ -29,8 +29,8 @@
                 </div>
                 
                 <div class="col-md-3">
-                    <label for="admissão" class="form-label">Data de Admissão</label>
-                    <input type="date" name="admissão" id="admissão" class="form-control">
+                    <label for="admissao" class="form-label">Data de Admissão</label>
+                    <input type="date" name="admissao" id="admissao" class="form-control">
                 </div>
                 <div class="col-4">
                     <label for="horário" class="form-label">Horário</label>
