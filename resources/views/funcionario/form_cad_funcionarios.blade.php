@@ -70,9 +70,9 @@
                     <label for="telefoneEmpresa" class="form-label">Telefone</label>
                     <input type="text" name="telefoneEmpresa" id="telefoneEmpresa" class="form-control">
                 </div>
-                <div class="btn-cad-funcionarios">
+                <div class="btn-form-cad">
                     <button type="submit" class="btn btn-primary">Salvar</button>
-                    <button type="reset" class="btn btn-primary">Cancelar</button>
+                    <a type="reset" href="{{ route('funcionario.list') }}" class="btn btn-primary" style="text-decoration: none;">Cancelar</a>
                 </div>
             </form>
         </div>

@@ -78,9 +78,11 @@
                     <input type="text" name="emailEmpresa" id="emailEmpresa" class="form-control">
                 </div>
                 <h3>Logotipo para Relatórios</h3>
-                <input type="file" name="aquivoLogo" id="arquivoLogo">
+                <div class="col-8">
+                    <input type="file" name="aquivoLogo" id="arquivoLogo">
+                </div>
 
-                <div class="btn-cad-empresa">
+                <div class="btn-form-cad">
                     <button type="submit" class="btn btn-primary">Salvar</button>
                     <a type="reset" href="{{ route('empresa.list') }}" class="btn btn-primary" style="text-decoration: none;">Cancelar</a>
                 </div>
